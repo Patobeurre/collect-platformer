@@ -12,7 +12,7 @@ background_mode = 1
 background_color = Color(0.372778, 0.625542, 0.700655, 1)
 sky = SubResource("Sky_w0ch0")
 ambient_light_source = 2
-ambient_light_color = Color(0.722923, 0.5745, 0.235311, 1)
+ambient_light_color = Color(0.921713, 0.76636, 0.431383, 1)
 
 [node name="TestTilemap" type="Node3D"]
 

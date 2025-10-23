@@ -13,7 +13,10 @@ metadata/_custom_type_script = "uid://c515win6iduye"
 
 [resource]
 script = ExtResource("4_nwf1l")
-life = 5
+lifeMax = 5
+isRespawnable = true
+timeToRespawn = 5.0
 scene = ExtResource("1_ktpjn")
 collectable_list = Array[ExtResource("1_bbid1")]([SubResource("Resource_71mhc")])
+animateOnInstantiate = true
 metadata/_custom_type_script = "uid://dp5t3y308ecto"
