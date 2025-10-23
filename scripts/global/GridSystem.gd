@@ -23,6 +23,8 @@ func _ready() -> void:
 	startingTile = grid[25][25]
 	currentTile = startingTile
 	
+	init_tower()
+	
 	grid[5][5].isAvailable = false
 	grid[5][6].isAvailable = false
 	grid[5][6].h = -3
@@ -31,6 +33,20 @@ func _ready() -> void:
 	grid[5][7].isAvailable = false
 	grid[5][7].h = -5
 
+
+func init_tower() -> void:
+	grid[30][30].isAvailable = false
+	grid[30][30].h = 10
+	grid[30][30].structure = load("res://models/structures/tower_lowpoly.tscn")
+	grid[30][29].isAvailable = false
+	grid[30][29].h = 10
+	grid[29][30].isAvailable = false
+	grid[29][30].h = 8
+	grid[29][29].isAvailable = false
+	grid[29][29].h = 7
+	grid[30][28].isAvailable = false
+	grid[30][28].h = 9
+	
 
 func initialize_grid() -> void:
 	grid = []

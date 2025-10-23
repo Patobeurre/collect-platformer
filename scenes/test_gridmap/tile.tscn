@@ -90,60 +90,70 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.91192, 0, 4.89239)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D"]
+visible = false
 mesh = SubResource("SphereMesh_sgnsw")
 
 [node name="Node3D9" type="Node3D" parent="MainNode/Collectables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9376, 0, 3.54153)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D9"]
+visible = false
 mesh = SubResource("SphereMesh_sgnsw")
 
 [node name="Node3D2" type="Node3D" parent="MainNode/Collectables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3072, 0, 7.30219)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D2"]
+visible = false
 mesh = SubResource("SphereMesh_sgnsw")
 
 [node name="Node3D3" type="Node3D" parent="MainNode/Collectables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.13634, 0, 12.6779)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D3"]
+visible = false
 mesh = SubResource("SphereMesh_sgnsw")
 
 [node name="Node3D11" type="Node3D" parent="MainNode/Collectables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.36261, 0, 8.04534)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D11"]
+visible = false
 mesh = SubResource("SphereMesh_sgnsw")
 
 [node name="Node3D4" type="Node3D" parent="MainNode/Collectables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.756, 0, 16.0035)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D4"]
+visible = false
 mesh = SubResource("SphereMesh_sgnsw")
 
 [node name="Node3D5" type="Node3D" parent="MainNode/Collectables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.17813, 0, 14.1442)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D5"]
+visible = false
 mesh = SubResource("SphereMesh_sgnsw")
 
 [node name="Node3D10" type="Node3D" parent="MainNode/Collectables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.31192, 0, 15.7792)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D10"]
+visible = false
 mesh = SubResource("SphereMesh_sgnsw")
 
 [node name="Node3D6" type="Node3D" parent="MainNode/Collectables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0172, 0, 6.47083)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D6"]
+visible = false
 mesh = SubResource("SphereMesh_sgnsw")
 
 [node name="Node3D7" type="Node3D" parent="MainNode/Collectables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8253, 0, 13.1344)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D7"]
+visible = false
 mesh = SubResource("SphereMesh_sgnsw")
 
 [node name="Node3D8" type="Node3D" parent="MainNode/Collectables"]
@@ -151,7 +161,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21035, 0, 7.36704)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.476776, 0, 1.58925)
+visible = false
 mesh = SubResource("SphereMesh_sgnsw")
+
+[node name="Structures" type="Node3D" parent="MainNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 20, 10)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

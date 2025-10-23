@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://fqrnp8pg1c5"]
+
+[ext_resource type="PackedScene" uid="uid://c7aappg0osx87" path="res://models/structures/tower_low_poly.glb" id="1_501jm"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="tower_low_poly" parent="." instance=ExtResource("1_501jm")]
