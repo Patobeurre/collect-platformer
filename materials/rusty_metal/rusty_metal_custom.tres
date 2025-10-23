@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://cq1mpc7oyjmoh"]
+
+[ext_resource type="Texture2D" uid="uid://ydd3h7c5vs84" path="res://materials/rusty_metal/rusty_metal_04_diff_4k.png" id="1_465b6"]
+[ext_resource type="Texture2D" uid="uid://bhdp37coi0cqa" path="res://materials/rusty_metal/rusty_metal_04_ao_4k.png" id="2_dkb71"]
+[ext_resource type="Texture2D" uid="uid://la3w1mxuq7on" path="res://materials/rusty_metal/rusty_metal_04_metal_4k.png" id="3_fq6tb"]
+[ext_resource type="Texture2D" uid="uid://ny3krltarpsa" path="res://materials/rusty_metal/rusty_metal_04_nor_gl_4k.png" id="4_l5tso"]
+[ext_resource type="Texture2D" uid="uid://ctgeeeg18tbf6" path="res://materials/rusty_metal/rusty_metal_04_rough_4k.png" id="5_56iam"]
+
+[resource]
+albedo_texture = ExtResource("1_465b6")
+metallic = 1.0
+metallic_texture = ExtResource("3_fq6tb")
+roughness_texture = ExtResource("5_56iam")
+normal_enabled = true
+normal_texture = ExtResource("4_l5tso")
+ao_enabled = true
+ao_texture = ExtResource("2_dkb71")
+heightmap_scale = 16.0
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_world_triplanar = true

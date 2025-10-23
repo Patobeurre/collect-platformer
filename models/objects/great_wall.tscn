@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://defhd4le4hrwi"]
+
+[ext_resource type="PackedScene" uid="uid://doxn8bt0n8rfg" path="res://models/concrete_wall.fbx" id="1_68o3r"]
+
+[node name="GreatWall" type="Node3D"]
+
+[node name="concrete_wall" parent="." instance=ExtResource("1_68o3r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="concrete_wall2" parent="." instance=ExtResource("1_68o3r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="concrete_wall3" parent="." instance=ExtResource("1_68o3r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -12, 0, 0)
+
+[node name="concrete_wall4" parent="." instance=ExtResource("1_68o3r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 36, 0, 0)
+
+[node name="concrete_wall5" parent="." instance=ExtResource("1_68o3r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 48, 0, 0)
+
+[node name="concrete_wall6" parent="." instance=ExtResource("1_68o3r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 24, 0, 0)
+
+[node name="concrete_wall7" parent="." instance=ExtResource("1_68o3r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -36, 0, 0)
+
+[node name="concrete_wall8" parent="." instance=ExtResource("1_68o3r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -24, 0, 0)
+
+[node name="concrete_wall9" parent="." instance=ExtResource("1_68o3r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -48, 0, 0)
+
+[node name="concrete_wall10" parent="." instance=ExtResource("1_68o3r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -72, 0, 0)
+
+[node name="concrete_wall11" parent="." instance=ExtResource("1_68o3r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -60, 0, 0)
+
+[node name="concrete_wall12" parent="." instance=ExtResource("1_68o3r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -84, 0, 0)
+
+[node name="concrete_wall13" parent="." instance=ExtResource("1_68o3r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 72, 0, 0)
+
+[node name="concrete_wall14" parent="." instance=ExtResource("1_68o3r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 84, 0, 0)
+
+[node name="concrete_wall15" parent="." instance=ExtResource("1_68o3r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 60, 0, 0)

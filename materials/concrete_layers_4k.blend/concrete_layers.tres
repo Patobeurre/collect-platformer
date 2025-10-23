@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bnnxhfn00l0mn"]
+
+[ext_resource type="Texture2D" uid="uid://cnrxe1nmdwvx5" path="res://materials/concrete_layers_4k.blend/textures/concrete_layers_diff_4k.jpg" id="1_c680k"]
+[ext_resource type="Texture2D" uid="uid://dr38xsyko1w3w" path="res://materials/concrete_layers_4k.blend/textures/concrete_layers_disp_4k.png" id="2_m8lva"]
+
+[resource]
+albedo_texture = ExtResource("1_c680k")
+normal_enabled = true
+rim_texture = ExtResource("2_m8lva")
+heightmap_texture = ExtResource("2_m8lva")
+uv1_scale = Vector3(0.02, 0.02, 0.02)
+uv1_triplanar = true
+uv1_world_triplanar = true

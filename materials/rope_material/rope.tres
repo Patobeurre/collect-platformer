@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://d2x17ijo0ckuc"]
+
+[ext_resource type="Texture2D" uid="uid://cq26qph2cft0v" path="res://materials/rope_material/Rope fabric_BaseColor.jpg" id="1_t4a6p"]
+[ext_resource type="Texture2D" uid="uid://clf1maxcfjmqk" path="res://materials/rope_material/Rope fabric_AmbientOcclusion.jpg" id="2_ghjd8"]
+[ext_resource type="Texture2D" uid="uid://6qdv1rbjdpys" path="res://materials/rope_material/Rope fabric_Height.jpg" id="3_x03ij"]
+[ext_resource type="Texture2D" uid="uid://07q1gwckrvxb" path="res://materials/rope_material/Rope fabric_Metallic.jpg" id="4_8lgh5"]
+[ext_resource type="Texture2D" uid="uid://eioo8tshmolh" path="res://materials/rope_material/Rope fabric_Normal.jpg" id="5_7og5x"]
+[ext_resource type="Texture2D" uid="uid://txl7il5f1fhm" path="res://materials/rope_material/Rope fabric_Roughness.jpg" id="6_suo6n"]
+
+[resource]
+albedo_texture = ExtResource("1_t4a6p")
+metallic = 1.0
+metallic_texture = ExtResource("4_8lgh5")
+roughness_texture = ExtResource("6_suo6n")
+normal_enabled = true
+normal_texture = ExtResource("5_7og5x")
+ao_enabled = true
+ao_texture = ExtResource("2_ghjd8")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_x03ij")
+uv1_triplanar_sharpness = 0.985426
+uv1_world_triplanar = true

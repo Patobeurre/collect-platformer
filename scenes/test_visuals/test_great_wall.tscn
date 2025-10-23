@@ -1,0 +1,192 @@
+[gd_scene load_steps=12 format=3 uid="uid://bljrmrp1qb7i"]
+
+[ext_resource type="PackedScene" uid="uid://defhd4le4hrwi" path="res://models/objects/great_wall.tscn" id="1_n8d6c"]
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/PlayerCharacterScene.tscn" id="2_coih0"]
+[ext_resource type="PackedScene" uid="uid://ce5tshrdwxkun" path="res://models/pipe_straight.fbx" id="3_4dr8v"]
+[ext_resource type="PackedScene" uid="uid://his7edo8h4c2" path="res://models/objects/rounded_tower.tscn" id="3_qnxen"]
+[ext_resource type="PackedScene" uid="uid://nbde0efb48aj" path="res://models/pipe_bent_90d.fbx" id="4_5mmar"]
+[ext_resource type="PackedScene" uid="uid://bos87l0tkjp51" path="res://models/objects/air_vent_obj.tscn" id="5_77drm"]
+[ext_resource type="Material" uid="uid://bnnxhfn00l0mn" path="res://materials/concrete_layers_4k.blend/concrete_layers.tres" id="5_t6hys"]
+[ext_resource type="PackedScene" uid="uid://8lcnrbrd23ru" path="res://models/objects/concrete_bridge.tscn" id="7_n8d6c"]
+[ext_resource type="PackedScene" uid="uid://f2fe4a0jtcqc" path="res://models/objects/pillars.tscn" id="9_mwx4t"]
+
+[sub_resource type="Sky" id="Sky_0xm2m"]
+
+[sub_resource type="Environment" id="Environment_coih0"]
+background_mode = 2
+sky = SubResource("Sky_0xm2m")
+ambient_light_color = Color(0.9, 0.8685, 0.774, 1)
+ambient_light_sky_contribution = 0.9
+fog_mode = 1
+fog_light_color = Color(0.612119, 0.644967, 0.696582, 1)
+fog_light_energy = 0.5
+fog_sun_scatter = 0.05
+fog_density = 0.9
+fog_depth_curve = 3.0
+fog_depth_begin = 20.0
+fog_depth_end = 180.0
+volumetric_fog_length = 144.31
+
+[node name="TestGreatWall" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_coih0")
+
+[node name="Structures" type="Node3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="GreatWallFront" type="Node3D" parent="Structures"]
+
+[node name="GreatWall" parent="Structures/GreatWallFront" instance=ExtResource("1_n8d6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
+
+[node name="RoundedTower" parent="Structures" instance=ExtResource("3_qnxen")]
+transform = Transform3D(-0.0258819, 0, -0.0965926, 0, 0.1, 0, 0.0965926, 0, -0.0258819, -43.2, 18.4, 24.4)
+visible = false
+
+[node name="GreatWallBack" type="Node3D" parent="Structures"]
+
+[node name="AirVent" parent="Structures/GreatWallBack" instance=ExtResource("5_77drm")]
+transform = Transform3D(0.2, 0, 0, 0, 0.19589, 0.0403387, 0, -0.0403387, 0.19589, 0.0615, 2.77926, 10.1468)
+
+[node name="GreatWall" parent="Structures/GreatWallBack" instance=ExtResource("1_n8d6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.6)
+
+[node name="AirVent2" parent="Structures/GreatWallBack" instance=ExtResource("5_77drm")]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74229e-09, 7.1615, 3.47926, 6.7468)
+
+[node name="AirVent3" parent="Structures/GreatWallBack" instance=ExtResource("5_77drm")]
+transform = Transform3D(2.62268e-08, 0, 0.2, 0, 0.2, 0, -0.2, 0, 2.62269e-08, 4.8615, 3.47926, 6.7468)
+
+[node name="Bridge" type="Node3D" parent="Structures"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Structures/Bridge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0393877, 0, 10.5773)
+use_collision = true
+size = Vector3(15.2983, 1, 2.35461)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Structures/Bridge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0555679, 0, 27.6854)
+visible = false
+use_collision = true
+size = Vector3(1.7714, 1, 22)
+
+[node name="ConcreteBridge" parent="Structures" instance=ExtResource("7_n8d6c")]
+transform = Transform3D(-1.31134e-09, 0, -0.03, 0, 0.03, 0, 0.03, 0, -1.31134e-09, 6, 9, -1)
+
+[node name="ConcreteBridge2" parent="Structures" instance=ExtResource("7_n8d6c")]
+transform = Transform3D(-1.31134e-09, 0, -0.03, 0, 0.03, 0, 0.03, 0, -1.31134e-09, 6, 4, -0.6)
+
+[node name="ConcreteBridge3" parent="Structures" instance=ExtResource("7_n8d6c")]
+transform = Transform3D(-1.31134e-09, 0, -0.03, 0, 0.03, 0, 0.03, 0, -1.31134e-09, 6, 14, -1)
+
+[node name="SideWalls" type="Node3D" parent="Structures"]
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Structures/SideWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 5.1, 6.3)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 25, 1, 25, 1, 1)
+material = ExtResource("5_t6hys")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Structures/SideWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.6, 5.1, 5.3)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 25, 1, 25, 1, 1)
+material = ExtResource("5_t6hys")
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Structures/SideWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 5.1, 4.4)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 25, 1, 25, 1, 1)
+material = ExtResource("5_t6hys")
+
+[node name="CSGPolygon3D4" type="CSGPolygon3D" parent="Structures/SideWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.6, 5.1, 3.4)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 25, 1, 25, 1, 1)
+material = ExtResource("5_t6hys")
+
+[node name="Pillars" type="Node3D" parent="Structures"]
+
+[node name="Pillars" parent="Structures/Pillars" instance=ExtResource("9_mwx4t")]
+transform = Transform3D(-0.09, 0, -1.35896e-08, 0, 0.09, 0, 1.35896e-08, 0, -0.09, 12, 0.1, 19.2)
+
+[node name="Pillars2" parent="Structures/Pillars" instance=ExtResource("9_mwx4t")]
+transform = Transform3D(-0.09, 0, -1.35896e-08, 0, 0.09, 0, 1.35896e-08, 0, -0.09, -12, 0.1, 19.2)
+
+[node name="Pillars3" parent="Structures/Pillars" instance=ExtResource("9_mwx4t")]
+transform = Transform3D(-0.09, 0, -1.35896e-08, 0, 0.09, 0, 1.35896e-08, 0, -0.09, 60, 0.1, 19.2)
+
+[node name="Pillars4" parent="Structures/Pillars" instance=ExtResource("9_mwx4t")]
+transform = Transform3D(-0.09, 0, -1.35896e-08, 0, 0.09, 0, 1.35896e-08, 0, -0.09, 36, 0.1, 19.2)
+
+[node name="Pillars5" parent="Structures/Pillars" instance=ExtResource("9_mwx4t")]
+transform = Transform3D(-0.09, 0, -1.35896e-08, 0, 0.09, 0, 1.35896e-08, 0, -0.09, -36, 0.1, 19.2)
+
+[node name="Pillars6" parent="Structures/Pillars" instance=ExtResource("9_mwx4t")]
+transform = Transform3D(-0.09, 0, -1.35896e-08, 0, 0.09, 0, 1.35896e-08, 0, -0.09, -60, 0.1, 19.2)
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_coih0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 60.6999, 23.7596, 83.548)
+
+[node name="Pipes" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="pipe_straight" parent="Pipes" instance=ExtResource("3_4dr8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 10, 97)
+
+[node name="pipe_bent_90d" parent="Pipes" instance=ExtResource("4_5mmar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 15, 97)
+
+[node name="pipe_bent_90d2" parent="Pipes" instance=ExtResource("4_5mmar")]
+transform = Transform3D(-4.37114e-08, 4.37114e-08, -1, 1, 1.91069e-15, -4.37114e-08, 0, -1, -4.37114e-08, 26, 20, 92)
+
+[node name="pipe_straight2" parent="Pipes" instance=ExtResource("3_4dr8v")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 36, 20, 87)
+
+[node name="pipe_straight3" parent="Pipes" instance=ExtResource("3_4dr8v")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 40, 20, 85)
+
+[node name="pipe_straight4" parent="Pipes" instance=ExtResource("3_4dr8v")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 44, 20, 83)
+
+[node name="pipe_straight5" parent="Pipes" instance=ExtResource("3_4dr8v")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 30, 20, 85)
+
+[node name="pipe_straight6" parent="Pipes" instance=ExtResource("3_4dr8v")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 34, 20, 83)
+
+[node name="pipe_straight7" parent="Pipes" instance=ExtResource("3_4dr8v")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 46, 20, 87)
+
+[node name="pipe_straight8" parent="Pipes" instance=ExtResource("3_4dr8v")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 50, 20, 85)
+
+[node name="pipe_bent_90d3" parent="Pipes" instance=ExtResource("4_5mmar")]
+transform = Transform3D(-4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 4.37114e-08, 54, 25, 83)
+
+[node name="pipe_straight9" parent="Pipes" instance=ExtResource("3_4dr8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 30, 83)
+
+[node name="pipe_straight10" parent="Pipes" instance=ExtResource("3_4dr8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 40, 83)
+
+[node name="pipe_straight11" parent="Pipes" instance=ExtResource("3_4dr8v")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 24, 20, 83)
+
+[node name="pipe_bent_90d4" parent="Pipes" instance=ExtResource("4_5mmar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 45, 83)
+
+[node name="pipe_straight12" parent="Pipes" instance=ExtResource("3_4dr8v")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 56, 20, 87)
+
+[node name="pipe_straight13" parent="Pipes" instance=ExtResource("3_4dr8v")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 54, 50, 73)
+
+[node name="pipe_bent_90d5" parent="Pipes" instance=ExtResource("4_5mmar")]
+transform = Transform3D(-2.98023e-08, -1, 1.77636e-15, -1, 2.98023e-08, 8.74228e-08, -8.74228e-08, 0, -1, 59, 50, 63)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.708931, 0.705278, 0, -0.705278, -0.708931, 0, 190, -327.223)
+light_color = Color(0.802657, 0.853132, 1, 1)
+light_specular = 0.0

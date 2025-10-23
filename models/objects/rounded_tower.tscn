@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://his7edo8h4c2"]
+
+[ext_resource type="PackedScene" uid="uid://b7n6m7d172un0" path="res://models/rounded_tower.glb" id="1_u2f0h"]
+[ext_resource type="PackedScene" uid="uid://chd6pse37tytx" path="res://models/rounded_tower_support.fbx" id="2_wibxg"]
+
+[node name="RoundedTower" type="Node3D"]
+
+[node name="rounded_tower2" parent="." instance=ExtResource("1_u2f0h")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 43, 30)
+visible = false
+light_color = Color(0.664842, 0.902943, 7.70092e-07, 1)
+light_energy = 6.0
+light_specular = 1.0
+omni_range = 88.512
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.6702, -47.0375, 25.5081)
+visible = false
+light_color = Color(0.664842, 0.902943, 7.70092e-07, 1)
+light_energy = 6.0
+light_specular = 1.0
+omni_range = 88.512
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0871, 46.9072, -29.7131)
+visible = false
+light_color = Color(0.664842, 0.902943, 7.70092e-07, 1)
+light_energy = 6.0
+light_specular = 1.0
+omni_range = 88.512
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.59351, -2.96647, -32.2229)
+visible = false
+light_color = Color(0.664842, 0.902943, 7.70092e-07, 1)
+light_energy = 6.0
+light_specular = 1.0
+omni_range = 88.512
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.7988, -31.6716, -18.8578)
+visible = false
+light_color = Color(0.664842, 0.902943, 7.70092e-07, 1)
+light_energy = 6.0
+light_specular = 1.0
+omni_range = 88.512
+
+[node name="rounded_tower_support" parent="." instance=ExtResource("2_wibxg")]

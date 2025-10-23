@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Pattern" load_steps=2 format=3 uid="uid://ico0siu60468"]
+
+[ext_resource type="Script" uid="uid://bp0x13hfp36yk" path="res://scripts/resources/TileMap/Pattern.gd" id="1_1aydv"]
+
+[resource]
+script = ExtResource("1_1aydv")
+new_tile_coords = Array[Vector2]([Vector2(1, -1), Vector2(1, 0), Vector2(1, 1)])
+blocked_tile_coords = Array[Vector2]([])
+metadata/_custom_type_script = "uid://bp0x13hfp36yk"

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CostCollectable" load_steps=7 format=3 uid="uid://dhe8inwl01vee"]
+
+[ext_resource type="Script" uid="uid://c515win6iduye" path="res://scripts/resources/CollectableWithQteRes.gd" id="1_ay6d2"]
+[ext_resource type="Resource" uid="uid://de4jf0w023oeu" path="res://scripts/resources/Collectables/stone.tres" id="2_mw5nk"]
+[ext_resource type="Script" uid="uid://7yso83c140fm" path="res://scripts/resources/CostCollectable.gd" id="2_wrmq7"]
+[ext_resource type="Resource" uid="uid://3x1xv2e7148p" path="res://scripts/resources/Collectables/wood.tres" id="3_topdx"]
+
+[sub_resource type="Resource" id="Resource_mw5nk"]
+script = ExtResource("1_ay6d2")
+res = ExtResource("2_mw5nk")
+quantity = 1
+metadata/_custom_type_script = "uid://c515win6iduye"
+
+[sub_resource type="Resource" id="Resource_topdx"]
+script = ExtResource("1_ay6d2")
+res = ExtResource("3_topdx")
+quantity = 1
+metadata/_custom_type_script = "uid://c515win6iduye"
+
+[resource]
+script = ExtResource("2_wrmq7")
+costs = Array[ExtResource("1_ay6d2")]([SubResource("Resource_mw5nk"), SubResource("Resource_topdx")])
+metadata/_custom_type_script = "uid://7yso83c140fm"

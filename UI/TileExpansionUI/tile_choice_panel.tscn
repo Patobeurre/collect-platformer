@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://capumodd4nhwh"]
+
+[ext_resource type="Script" uid="uid://18173a43dgqt" path="res://UI/TileExpansionUI/tile_choice_panel.gd" id="1_f6pxb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hthdv"]
+bg_color = Color(0, 0, 0, 0.392157)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="TileChoicePanel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_hthdv")
+script = ExtResource("1_f6pxb")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/bold_font_size = 25
+bbcode_enabled = true
+text = "[b]Choix"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+text = "Height:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HeightLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+text = "0
+"
+vertical_alignment = 1

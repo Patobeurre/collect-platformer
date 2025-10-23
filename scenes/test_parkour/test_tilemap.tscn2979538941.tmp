@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnrsyexp0o3wb"]
+
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/PlayerCharacterScene.tscn" id="1_ky42w"]
+[ext_resource type="PackedScene" uid="uid://gs08b5q3jvqr" path="res://scenes/test_visuals/tile.tscn" id="2_w0ch0"]
+
+[sub_resource type="Sky" id="Sky_w0ch0"]
+
+[sub_resource type="Environment" id="Environment_cyvmt"]
+background_mode = 1
+background_color = Color(0.372778, 0.625542, 0.700655, 1)
+sky = SubResource("Sky_w0ch0")
+ambient_light_source = 2
+ambient_light_color = Color(0.722923, 0.5745, 0.235311, 1)
+
+[node name="TestTilemap" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cyvmt")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_ky42w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.7973, 0)
+collision_mask = 101
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, -118, 0, 0)
+shadow_enabled = true
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Tile" parent="Node3D" instance=ExtResource("2_w0ch0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -10, 0)
+
+[node name="Tile2" parent="Node3D" instance=ExtResource("2_w0ch0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10, -8, 0)
+
+[node name="Tile3" parent="Node3D" instance=ExtResource("2_w0ch0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -10, -10)
+
+[node name="Tile4" parent="Node3D" instance=ExtResource("2_w0ch0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10, -6, -10)
+
+[node name="Tile5" parent="Node3D" instance=ExtResource("2_w0ch0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -4, 10)
+
+[node name="Tile6" parent="Node3D" instance=ExtResource("2_w0ch0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -10, -2, 0)

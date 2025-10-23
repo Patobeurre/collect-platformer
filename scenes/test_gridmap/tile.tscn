@@ -1,0 +1,159 @@
+[gd_scene load_steps=8 format=3 uid="uid://gs08b5q3jvqr"]
+
+[ext_resource type="Script" uid="uid://c4e855xqfdy0x" path="res://scripts/tile.gd" id="1_dm6io"]
+[ext_resource type="PackedScene" uid="uid://bl583tolexw07" path="res://models/map_tiles/base_tile.tscn" id="2_sgnsw"]
+[ext_resource type="PackedScene" uid="uid://bpjg2igb8lgdl" path="res://models/map_tiles/expand_node.tscn" id="3_jlkus"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_sgnsw"]
+
+[sub_resource type="Animation" id="Animation_jmoj5"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainNode")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -20, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainNode:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_sgnsw"]
+resource_name = "lift_up"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainNode")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -40, 0, 0.5, 1, 0, -20, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainNode:visible")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3jpvr"]
+_data = {
+&"RESET": SubResource("Animation_jmoj5"),
+&"lift_up": SubResource("Animation_sgnsw")
+}
+
+[node name="Tile" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_dm6io")
+
+[node name="MainNode" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0)
+
+[node name="Mesh" type="Node3D" parent="MainNode"]
+
+[node name="BaseTile" parent="MainNode/Mesh" instance=ExtResource("2_sgnsw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+
+[node name="Borders" type="Node3D" parent="MainNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+
+[node name="ExpandLeft" parent="MainNode/Borders" instance=ExtResource("3_jlkus")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 10, 1, -1)
+
+[node name="ExpandRight" parent="MainNode/Borders" instance=ExtResource("3_jlkus")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 10, 1, 21)
+
+[node name="ExpandFront" parent="MainNode/Borders" instance=ExtResource("3_jlkus")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 21, 1, 10)
+
+[node name="ExpandBack" parent="MainNode/Borders" instance=ExtResource("3_jlkus")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1, 1, 10)
+
+[node name="Collectables" type="Node3D" parent="MainNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+
+[node name="Node3D" type="Node3D" parent="MainNode/Collectables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.91192, 0, 4.89239)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D"]
+mesh = SubResource("SphereMesh_sgnsw")
+
+[node name="Node3D9" type="Node3D" parent="MainNode/Collectables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9376, 0, 3.54153)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D9"]
+mesh = SubResource("SphereMesh_sgnsw")
+
+[node name="Node3D2" type="Node3D" parent="MainNode/Collectables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3072, 0, 7.30219)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D2"]
+mesh = SubResource("SphereMesh_sgnsw")
+
+[node name="Node3D3" type="Node3D" parent="MainNode/Collectables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.13634, 0, 12.6779)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D3"]
+mesh = SubResource("SphereMesh_sgnsw")
+
+[node name="Node3D11" type="Node3D" parent="MainNode/Collectables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.36261, 0, 8.04534)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D11"]
+mesh = SubResource("SphereMesh_sgnsw")
+
+[node name="Node3D4" type="Node3D" parent="MainNode/Collectables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.756, 0, 16.0035)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D4"]
+mesh = SubResource("SphereMesh_sgnsw")
+
+[node name="Node3D5" type="Node3D" parent="MainNode/Collectables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.17813, 0, 14.1442)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D5"]
+mesh = SubResource("SphereMesh_sgnsw")
+
+[node name="Node3D10" type="Node3D" parent="MainNode/Collectables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.31192, 0, 15.7792)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D10"]
+mesh = SubResource("SphereMesh_sgnsw")
+
+[node name="Node3D6" type="Node3D" parent="MainNode/Collectables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0172, 0, 6.47083)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D6"]
+mesh = SubResource("SphereMesh_sgnsw")
+
+[node name="Node3D7" type="Node3D" parent="MainNode/Collectables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8253, 0, 13.1344)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D7"]
+mesh = SubResource("SphereMesh_sgnsw")
+
+[node name="Node3D8" type="Node3D" parent="MainNode/Collectables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21035, 0, 7.36704)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MainNode/Collectables/Node3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.476776, 0, 1.58925)
+mesh = SubResource("SphereMesh_sgnsw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3jpvr")
+}

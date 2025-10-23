@@ -1,0 +1,97 @@
+[gd_scene load_steps=12 format=3 uid="uid://bpjg2igb8lgdl"]
+
+[ext_resource type="Script" uid="uid://d02usyi2m1qos" path="res://scripts/extend_tile.gd" id="1_bfqdo"]
+[ext_resource type="Texture2D" uid="uid://d0xo4pnie5h2f" path="res://images/plus_icon.png" id="2_vfxm5"]
+[ext_resource type="PackedScene" uid="uid://m5hoosic1e63" path="res://UI/TileExpansionUI/tile_expand_UI.tscn" id="3_1ff2m"]
+[ext_resource type="Script" uid="uid://blrd7gd2y8bas" path="res://UI/TileExpansionUI/choice_collider.gd" id="3_nodca"]
+[ext_resource type="Script" uid="uid://byt6i4yva1lv" path="res://scripts/resources/TileMap/CreationTileRes.gd" id="4_ddshh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_02g73"]
+radius = 4.0
+
+[sub_resource type="Resource" id="Resource_7qo5m"]
+script = ExtResource("4_ddshh")
+from = Vector2(0, 0)
+to = Vector2(0, 0)
+h = -1
+metadata/_custom_type_script = "uid://byt6i4yva1lv"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ff2m"]
+size = Vector3(8, 15, 1)
+
+[sub_resource type="Resource" id="Resource_ddshh"]
+script = ExtResource("4_ddshh")
+from = Vector2(0, 0)
+to = Vector2(0, 0)
+h = 0
+metadata/_custom_type_script = "uid://byt6i4yva1lv"
+
+[sub_resource type="Resource" id="Resource_ec3ot"]
+script = ExtResource("4_ddshh")
+from = Vector2(0, 0)
+to = Vector2(0, 0)
+h = 1
+metadata/_custom_type_script = "uid://byt6i4yva1lv"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nodca"]
+viewport_path = NodePath("GUI/Sprite3D/SubViewport")
+
+[node name="ExpandNode" type="StaticBody3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_bfqdo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_02g73")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture = ExtResource("2_vfxm5")
+
+[node name="GUI" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 0)
+
+[node name="TempSelect" type="Node3D" parent="GUI"]
+
+[node name="Choice1" type="StaticBody3D" parent="GUI/TempSelect" node_paths=PackedStringArray("parent")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("3_nodca")
+parent = NodePath("../../..")
+res = SubResource("Resource_7qo5m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GUI/TempSelect/Choice1"]
+shape = SubResource("BoxShape3D_1ff2m")
+
+[node name="Choice2" type="StaticBody3D" parent="GUI/TempSelect" node_paths=PackedStringArray("parent")]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("3_nodca")
+parent = NodePath("../../..")
+res = SubResource("Resource_ddshh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GUI/TempSelect/Choice2"]
+shape = SubResource("BoxShape3D_1ff2m")
+
+[node name="Choice3" type="StaticBody3D" parent="GUI/TempSelect" node_paths=PackedStringArray("parent")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("3_nodca")
+parent = NodePath("../../..")
+res = SubResource("Resource_ec3ot")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GUI/TempSelect/Choice3"]
+shape = SubResource("BoxShape3D_1ff2m")
+
+[node name="Sprite3D" type="Sprite3D" parent="GUI"]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, 0, 0, 0)
+texture = SubResource("ViewportTexture_nodca")
+
+[node name="SubViewport" type="SubViewport" parent="GUI/Sprite3D"]
+transparent_bg = true
+size = Vector2i(500, 300)
+
+[node name="Control" parent="GUI/Sprite3D/SubViewport" instance=ExtResource("3_1ff2m")]

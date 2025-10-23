@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BiomeRes" load_steps=9 format=3 uid="uid://dsv64oiofrw5i"]
+
+[ext_resource type="Script" uid="uid://dp5t3y308ecto" path="res://scripts/resources/BreakableObjRes.gd" id="1_bfctg"]
+[ext_resource type="Resource" uid="uid://dmiv34kdpkrfj" path="res://scripts/resources/BreakableResources/Pine.tres" id="2_hkrkr"]
+[ext_resource type="Material" uid="uid://iu7tyhw8j3ah" path="res://materials/Tile/Grass.tres" id="3_nvwdr"]
+[ext_resource type="Script" uid="uid://bp0x13hfp36yk" path="res://scripts/resources/TileMap/Pattern.gd" id="4_x4ucg"]
+[ext_resource type="Resource" uid="uid://cmgu0xw6555sh" path="res://scripts/resources/TileMap/patterns/Simple.tres" id="5_m1fxu"]
+[ext_resource type="Resource" uid="uid://xjor3gqf6wm6" path="res://scripts/resources/TileMap/patterns/DoubleStraight.tres" id="6_ashrg"]
+[ext_resource type="Resource" uid="uid://dbo17g4w4lhn" path="res://scripts/resources/TileMap/patterns/DualBranches_1.tres" id="7_68vyl"]
+[ext_resource type="Script" uid="uid://c3wu3ilg3cgtw" path="res://scripts/resources/TileMap/BiomeRes.gd" id="8_hkrkr"]
+
+[resource]
+script = ExtResource("8_hkrkr")
+name = "Forest"
+lower_range = 2
+upper_range = 6
+material = ExtResource("3_nvwdr")
+collectablesTypes = Array[ExtResource("1_bfctg")]([ExtResource("2_hkrkr")])
+patterns = Array[ExtResource("4_x4ucg")]([ExtResource("5_m1fxu"), ExtResource("6_ashrg"), ExtResource("7_68vyl")])
+metadata/_custom_type_script = "uid://c3wu3ilg3cgtw"

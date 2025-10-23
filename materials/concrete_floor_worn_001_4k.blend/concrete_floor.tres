@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bef7xk85q6bev"]
+
+[ext_resource type="Texture2D" uid="uid://b6f24vhlgjltq" path="res://materials/concrete_floor_worn_001_4k.blend/textures/concrete_floor_worn_001_diff_4k.jpg" id="1_fmfuk"]
+[ext_resource type="Texture2D" uid="uid://dq5dx1xgeqdly" path="res://materials/concrete_floor_worn_001_4k.blend/textures/concrete_floor_worn_001_rough_4k.jpg" id="2_rno5f"]
+
+[resource]
+albedo_texture = ExtResource("1_fmfuk")
+roughness_texture = ExtResource("2_rno5f")
+heightmap_scale = 2.283
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+uv1_world_triplanar = true

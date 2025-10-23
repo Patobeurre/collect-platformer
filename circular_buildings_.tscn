@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxcd8xrsjgkv"]
+
+[ext_resource type="PackedScene" uid="uid://bc5of7mpr1h5d" path="res://models/circular_buildings.fbx" id="1_5n4bp"]
+
+[node name="rooftops" type="Node3D"]
+
+[node name="circular_buildings" parent="." instance=ExtResource("1_5n4bp")]

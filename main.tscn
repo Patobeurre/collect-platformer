@@ -1,0 +1,156 @@
+[gd_scene load_steps=17 format=3 uid="uid://bbo360igmbeqs"]
+
+[ext_resource type="Material" uid="uid://bjsbb03ooc64q" path="res://materials/Terracotta_Tiles_007_SD/terractotta.tres" id="2_0xm2m"]
+[ext_resource type="Material" uid="uid://bef7xk85q6bev" path="res://materials/concrete_floor_worn_001_4k.blend/concrete_floor.tres" id="2_h2yge"]
+[ext_resource type="Material" uid="uid://bnnxhfn00l0mn" path="res://materials/concrete_layers_4k.blend/concrete_layers.tres" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://b3eroritvt0je" path="res://tower.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://3gk7w7jxan0b" path="res://inner_tower.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/PlayerCharacterScene.tscn" id="7_5vw27"]
+[ext_resource type="AudioStream" uid="uid://dut23l3u5xmir" path="res://music/Last Night The Moon Came Jon Hassell.mp3" id="7_272bh"]
+
+[sub_resource type="Sky" id="Sky_0xm2m"]
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
+sky = SubResource("Sky_0xm2m")
+ambient_light_color = Color(0.9, 0.675, 0, 1)
+ambient_light_sky_contribution = 0.9
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.637847, 0.669527, 0.719307, 1)
+fog_sun_scatter = 0.5
+fog_density = 0.6
+fog_depth_curve = 2.63902
+fog_depth_begin = 0.0
+fog_depth_end = 180.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
+material = ExtResource("2_h2yge")
+size = Vector3(200, 1, 200)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7dm0k"]
+points = PackedVector3Array(-100, -0.5, -100, -100, 0.5, -100, 100, -0.5, -100, -100, -0.5, 100, -100, 0.5, 100, 100, 0.5, -100, 100, -0.5, 100, 100, 0.5, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+lightmap_size_hint = Vector2i(30, 125)
+material = ExtResource("2_0xm2m")
+uv2_padding = 0.0
+size = Vector3(1, 10, 5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0xm2m"]
+points = PackedVector3Array(0.5, 5, 2.5, -0.5, 5, 2.5, 0.5, -5, 2.5, 0.5, 5, -2.5, -0.5, 5, -2.5, -0.5, -5, 2.5, 0.5, -5, -2.5, -0.5, -5, -2.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1bvp3"]
+material = ExtResource("2_h2yge")
+size = Vector3(1, 10, 20)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h2yge"]
+points = PackedVector3Array(-0.5, -5, -10, 0.5, -5, -10, -0.5, -5, 10, -0.5, 5, -10, 0.5, 5, -10, 0.5, -5, 10, -0.5, 5, 10, 0.5, 5, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lquwl"]
+material = ExtResource("4_1bvp3")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.723726, -0.441193, 0.53063, 7.14022e-09, 0.768932, 0.639331, -0.690089, 0.462701, -0.556495, 0, -77.9182, 0)
+visible = false
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h2yge")
+
+[node name="Walls" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29, 0, 36)
+
+[node name="Floor" type="StaticBody3D" parent="Walls"]
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Floor"]
+mesh = SubResource("BoxMesh_7dm0k")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Floor"]
+shape = SubResource("ConvexPolygonShape3D_7dm0k")
+
+[node name="SimpleWall" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8147e-06, 5.43839, 44.6728)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/SimpleWall"]
+mesh = SubResource("BoxMesh_ig7tw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/SimpleWall"]
+shape = SubResource("ConvexPolygonShape3D_0xm2m")
+
+[node name="SimpleWallConcrete" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.34642, 21.8127)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/SimpleWallConcrete"]
+mesh = SubResource("BoxMesh_1bvp3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/SimpleWallConcrete"]
+shape = SubResource("ConvexPolygonShape3D_h2yge")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 10.6738, 0, 0, 0, 4.67811, 0, 5.19993, 37)
+mesh = SubResource("BoxMesh_lquwl")
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="BaseLight" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.8267, 0)
+light_color = Color(0.885262, 0.906193, 0.977358, 1)
+light_energy = 5.0
+light_specular = 0.0
+omni_range = 500.0
+omni_attenuation = 0.5
+
+[node name="LightLvl1" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+light_color = Color(0.885384, 0.932594, 0.836267, 1)
+light_energy = 2.0
+light_specular = 0.0
+shadow_enabled = true
+omni_range = 500.0
+omni_attenuation = 0.5
+
+[node name="LightLvl2" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
+light_color = Color(0.885384, 0.932594, 0.836267, 1)
+light_energy = 2.0
+light_specular = 0.0
+shadow_enabled = true
+omni_range = 500.0
+omni_attenuation = 0.5
+
+[node name="LightLvl3" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22, 0)
+light_color = Color(0.885384, 0.932594, 0.836267, 1)
+light_energy = 2.0
+light_specular = 0.0
+shadow_enabled = true
+omni_range = 500.0
+omni_attenuation = 0.5
+
+[node name="LightLvl4" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27, 0)
+light_color = Color(0.885384, 0.932594, 0.836267, 1)
+light_energy = 2.0
+light_specular = 0.0
+shadow_enabled = true
+omni_range = 500.0
+omni_attenuation = 0.5
+
+[node name="Tower" parent="." instance=ExtResource("5_lquwl")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="InnerTower" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Sounds" type="Node3D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("7_272bh")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("7_5vw27")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 61.8357, 4.14228, 30)

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b3f33l1jwncx5"]
+
+[ext_resource type="Texture2D" uid="uid://b2m4josrjq87k" path="res://materials/Tile/tile_3d_painted_Snow_5.png" id="1_l8y2k"]
+
+[resource]
+resource_name = "Rock"
+cull_mode = 2
+albedo_texture = ExtResource("1_l8y2k")
+roughness = 0.8

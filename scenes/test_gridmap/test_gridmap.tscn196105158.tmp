@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi36rgd82x5ym"]
+
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/PlayerCharacterScene.tscn" id="1_ukb4c"]
+[ext_resource type="PackedScene" uid="uid://gs08b5q3jvqr" path="res://scenes/test_gridmap/tile.tscn" id="2_0pk0n"]
+[ext_resource type="Script" uid="uid://2xdocpmctaly" path="res://scenes/test_gridmap/grid_map.gd" id="2_l7kee"]
+
+[sub_resource type="Sky" id="Sky_w0ch0"]
+
+[sub_resource type="Environment" id="Environment_cyvmt"]
+background_mode = 1
+background_color = Color(0.372778, 0.625542, 0.700655, 1)
+sky = SubResource("Sky_w0ch0")
+ambient_light_source = 2
+ambient_light_color = Color(0.722923, 0.5745, 0.235311, 1)
+
+[node name="TestTilemap" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cyvmt")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_ukb4c")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 250, 2.203, 250)
+collision_mask = 101
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, -118, 0, 0)
+shadow_enabled = true
+
+[node name="GridMap" type="Node3D" parent="."]
+script = ExtResource("2_l7kee")
+tile_scene = ExtResource("2_0pk0n")

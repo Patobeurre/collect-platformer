@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://m5hoosic1e63"]
+
+[ext_resource type="PackedScene" uid="uid://capumodd4nhwh" path="res://UI/TileExpansionUI/tile_choice_panel.tscn" id="1_hj68n"]
+[ext_resource type="Script" uid="uid://d0jqp7u2hpw5b" path="res://UI/TileExpansionUI/tile_expand_ui.gd" id="1_kaeee"]
+[ext_resource type="Texture2D" uid="uid://gfixuqqmlgq" path="res://images/Collectables/wood_icon.png" id="3_svemn"]
+[ext_resource type="Texture2D" uid="uid://65hr6kr2b15w" path="res://images/Collectables/stone_icon.png" id="4_ytcd6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kaeee")
+
+[node name="SplitContainer" type="SplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TileChoicePanel" parent="SplitContainer/HBoxContainer" instance=ExtResource("1_hj68n")]
+layout_mode = 2
+
+[node name="TileChoicePanel2" parent="SplitContainer/HBoxContainer" instance=ExtResource("1_hj68n")]
+layout_mode = 2
+
+[node name="TileChoicePanel3" parent="SplitContainer/HBoxContainer" instance=ExtResource("1_hj68n")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SplitContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SplitContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "Cost :"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSplitContainer" type="VSplitContainer" parent="SplitContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="SplitContainer/HBoxContainer2/VSplitContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_svemn")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="CostWoodLabel" type="RichTextLabel" parent="SplitContainer/HBoxContainer2/VSplitContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "0
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSplitContainer2" type="VSplitContainer" parent="SplitContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="SplitContainer/HBoxContainer2/VSplitContainer2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_ytcd6")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="CostStoneLabel" type="RichTextLabel" parent="SplitContainer/HBoxContainer2/VSplitContainer2"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "0
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1

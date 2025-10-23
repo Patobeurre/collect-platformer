@@ -1,0 +1,118 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bc5of7mpr1h5d"
+path="res://.godot/imported/circular_buildings.fbx-f1db2bfaf3b3fb1590caf97ca9f5d2d1.scn"
+
+[deps]
+
+source_file="res://models/circular_buildings.fbx"
+dest_files=["res://.godot/imported/circular_buildings.fbx-f1db2bfaf3b3fb1590caf97ca9f5d2d1.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"@MATERIAL:0": {
+"use_external/enabled": true,
+"use_external/path": "uid://bef7xk85q6bev"
+},
+"@MATERIAL:1": {
+"use_external/enabled": true,
+"use_external/path": "uid://bef7xk85q6bev"
+},
+"@MATERIAL:16": {
+"use_external/enabled": true,
+"use_external/path": "uid://bef7xk85q6bev"
+},
+"@MATERIAL:2": {
+"use_external/enabled": true,
+"use_external/path": "uid://bef7xk85q6bev"
+},
+"@MATERIAL:3": {
+"use_external/enabled": true,
+"use_external/path": "uid://bef7xk85q6bev"
+},
+"@MATERIAL:4": {
+"use_external/enabled": true,
+"use_external/path": "uid://bef7xk85q6bev"
+}
+},
+"nodes": {
+"PATH:Cylinder_002": {
+"generate/physics": true
+},
+"PATH:rooftop_step_002": {
+"generate/physics": true
+},
+"PATH:rooftop_step_003": {
+"generate/physics": true
+},
+"PATH:rooftop_step_004": {
+"generate/physics": true
+},
+"PATH:rooftop_step_005": {
+"generate/physics": true
+},
+"PATH:rooftop_step_006": {
+"generate/physics": true
+},
+"PATH:rooftop_step_007": {
+"generate/physics": true
+},
+"PATH:rooftop_step_008": {
+"generate/physics": true
+},
+"PATH:rooftop_step_009": {
+"generate/physics": true
+},
+"PATH:rooftop_step_010": {
+"generate/physics": true
+},
+"PATH:rooftop_step_011": {
+"generate/physics": true
+},
+"PATH:rooftop_step_012": {
+"generate/physics": true
+},
+"PATH:rooftop_step_013": {
+"generate/physics": true
+},
+"PATH:rooftop_step_014": {
+"generate/physics": true
+},
+"PATH:rooftop_step_015": {
+"generate/physics": true
+},
+"PATH:rooftop_step_016": {
+"generate/physics": true
+},
+"PATH:rooftop_step_017": {
+"generate/physics": true
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1

@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://8lcnrbrd23ru"]
+
+[ext_resource type="PackedScene" uid="uid://c8cmse5d134ci" path="res://models/concrete_bridge.fbx" id="1_l2y6l"]
+
+[node name="ConcreteBridge" type="Node3D"]
+
+[node name="concrete_bridge" parent="." instance=ExtResource("1_l2y6l")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 30)
+shadow_enabled = true
+omni_range = 36.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
+shadow_enabled = true
+omni_range = 36.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, -30)
+shadow_enabled = true
+omni_range = 36.0

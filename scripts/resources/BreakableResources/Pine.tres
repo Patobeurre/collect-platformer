@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="BreakableObjRes" load_steps=6 format=3 uid="uid://dmiv34kdpkrfj"]
+
+[ext_resource type="Resource" uid="uid://3x1xv2e7148p" path="res://scripts/resources/Collectables/wood.tres" id="1_71mhc"]
+[ext_resource type="Script" uid="uid://c515win6iduye" path="res://scripts/resources/CollectableWithQteRes.gd" id="1_bbid1"]
+[ext_resource type="PackedScene" uid="uid://di34v0k1438nn" path="res://models/breakables/pine.tscn" id="1_ktpjn"]
+[ext_resource type="Script" uid="uid://dp5t3y308ecto" path="res://scripts/resources/BreakableObjRes.gd" id="4_nwf1l"]
+
+[sub_resource type="Resource" id="Resource_71mhc"]
+script = ExtResource("1_bbid1")
+res = ExtResource("1_71mhc")
+quantity = 1
+metadata/_custom_type_script = "uid://c515win6iduye"
+
+[resource]
+script = ExtResource("4_nwf1l")
+life = 5
+scene = ExtResource("1_ktpjn")
+collectable_list = Array[ExtResource("1_bbid1")]([SubResource("Resource_71mhc")])
+metadata/_custom_type_script = "uid://dp5t3y308ecto"

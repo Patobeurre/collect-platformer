@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BiomeRes" load_steps=7 format=3 uid="uid://dyxldjfvpfi68"]
+
+[ext_resource type="Script" uid="uid://dp5t3y308ecto" path="res://scripts/resources/BreakableObjRes.gd" id="1_1i1w7"]
+[ext_resource type="Script" uid="uid://bp0x13hfp36yk" path="res://scripts/resources/TileMap/Pattern.gd" id="2_g4yiv"]
+[ext_resource type="Material" uid="uid://iu7tyhw8j3ah" path="res://materials/Tile/Grass.tres" id="2_sp2ws"]
+[ext_resource type="Resource" uid="uid://cflveseere5ql" path="res://scripts/resources/TileMap/patterns/JumpStraight.tres" id="4_1i1w7"]
+[ext_resource type="Resource" uid="uid://dbo17g4w4lhn" path="res://scripts/resources/TileMap/patterns/DualBranches_1.tres" id="5_1i1w7"]
+[ext_resource type="Script" uid="uid://c3wu3ilg3cgtw" path="res://scripts/resources/TileMap/BiomeRes.gd" id="6_goq0c"]
+
+[resource]
+script = ExtResource("6_goq0c")
+name = "Swamp"
+lower_range = -6
+upper_range = -2
+material = ExtResource("2_sp2ws")
+collectablesTypes = Array[ExtResource("1_1i1w7")]([])
+patterns = Array[ExtResource("2_g4yiv")]([ExtResource("4_1i1w7"), ExtResource("5_1i1w7")])
+metadata/_custom_type_script = "uid://c3wu3ilg3cgtw"

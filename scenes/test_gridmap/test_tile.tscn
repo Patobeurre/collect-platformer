@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckxyivwgkmojh"]
+
+[ext_resource type="Script" uid="uid://dtwkmdmviwr8r" path="res://scenes/test_gridmap/test_tile.gd" id="1_7yorm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mjjvy"]
+use_debanding = false
+
+[sub_resource type="Sky" id="Sky_7yorm"]
+sky_material = SubResource("ProceduralSkyMaterial_mjjvy")
+
+[sub_resource type="Environment" id="Environment_mjjvy"]
+background_mode = 2
+sky = SubResource("Sky_7yorm")
+ambient_light_source = 2
+ambient_light_color = Color(0.647532, 0.41255, 0.196514, 1)
+
+[node name="TestTile" type="Node3D"]
+script = ExtResource("1_7yorm")
+
+[node name="PlaygroundUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlaygroundUI"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PlaygroundUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PlaygroundUI/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "coords : "
+
+[node name="X" type="SpinBox" parent="PlaygroundUI/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+max_value = 10.0
+alignment = 2
+
+[node name="Y" type="SpinBox" parent="PlaygroundUI/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+max_value = 10.0
+alignment = 2
+
+[node name="AnimCheckBox" type="CheckBox" parent="PlaygroundUI/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Animate"
+
+[node name="AddTreeBtn" type="Button" parent="PlaygroundUI/VBoxContainer"]
+layout_mode = 2
+text = "Add tree"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlaygroundUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="CreateTileAnimBtn" type="Button" parent="PlaygroundUI/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Create"
+
+[node name="RemoveTile" type="Button" parent="PlaygroundUI/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Delete"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.612372, -0.5, 0.612372, -0.0473672, 0.75, 0.65974, -0.789149, -0.433013, 0.435596, -5, 6, -5)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mjjvy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.965926, -0.183013, -0.183013, 0, -0.707107, 0.707107, -0.258819, -0.683013, -0.683013, -3, 9, -11)
+
+[connection signal="value_changed" from="PlaygroundUI/VBoxContainer/HBoxContainer2/X" to="." method="_on_x_value_changed"]
+[connection signal="value_changed" from="PlaygroundUI/VBoxContainer/HBoxContainer2/Y" to="." method="_on_y_value_changed"]
+[connection signal="toggled" from="PlaygroundUI/VBoxContainer/AnimCheckBox" to="." method="_on_anim_check_box_toggled"]
+[connection signal="pressed" from="PlaygroundUI/VBoxContainer/AddTreeBtn" to="." method="_on_add_tree_btn_pressed"]
+[connection signal="pressed" from="PlaygroundUI/VBoxContainer/HBoxContainer/CreateTileAnimBtn" to="." method="_on_create_tile_anim_btn_pressed"]
+[connection signal="pressed" from="PlaygroundUI/VBoxContainer/HBoxContainer/RemoveTile" to="." method="_on_remove_tile_pressed"]

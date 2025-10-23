@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://f2fe4a0jtcqc"]
+
+[ext_resource type="PackedScene" uid="uid://brpa78n2wajc2" path="res://models/pillars.fbx" id="1_gtgay"]
+
+[node name="Pillars" type="Node3D"]
+
+[node name="pillars" parent="." instance=ExtResource("1_gtgay")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)

@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://dafo172vnt7wd"]
+
+[ext_resource type="Texture2D" uid="uid://gfixuqqmlgq" path="res://images/Collectables/wood_icon.png" id="1_tr7dw"]
+[ext_resource type="Script" uid="uid://b2fqtupltuu0d" path="res://UI/CollectablesHUD/collectables_hud.gd" id="1_vipsc"]
+[ext_resource type="Texture2D" uid="uid://65hr6kr2b15w" path="res://images/Collectables/stone_icon.png" id="2_xmvqk"]
+
+[node name="CollectablesHud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_vipsc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="WoodContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="CollectableIcon" type="TextureRect" parent="VBoxContainer/WoodContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_tr7dw")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="AmountTextLabel" type="RichTextLabel" parent="VBoxContainer/WoodContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+fit_content = true
+vertical_alignment = 1
+
+[node name="StoneContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="CollectableIcon" type="TextureRect" parent="VBoxContainer/StoneContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_xmvqk")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="AmountTextLabel" type="RichTextLabel" parent="VBoxContainer/StoneContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+fit_content = true
+vertical_alignment = 1

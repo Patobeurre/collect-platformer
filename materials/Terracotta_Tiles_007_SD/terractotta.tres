@@ -1,0 +1,24 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://bjsbb03ooc64q"]
+
+[ext_resource type="Texture2D" uid="uid://sl2wtdqgonvl" path="res://materials/Terracotta_Tiles_007_SD/Terracotta_Tiles_007_basecolor.png" id="1_276xc"]
+[ext_resource type="Texture2D" uid="uid://ddyitmv3nsuob" path="res://materials/Terracotta_Tiles_007_SD/Terracotta_Tiles_007_ambientOcclusion.png" id="2_tymwu"]
+[ext_resource type="Texture2D" uid="uid://ckb35px3xrma4" path="res://materials/Terracotta_Tiles_007_SD/Terracotta_Tiles_007_height.png" id="3_h3h3i"]
+[ext_resource type="Texture2D" uid="uid://c1bjberc7t5ae" path="res://materials/Terracotta_Tiles_007_SD/Terracotta_Tiles_007_normal.png" id="4_0s7p6"]
+[ext_resource type="Texture2D" uid="uid://bkmxakatctph3" path="res://materials/Terracotta_Tiles_007_SD/Terracotta_Tiles_007_roughness.png" id="5_1imch"]
+
+[resource]
+albedo_texture = ExtResource("1_276xc")
+roughness = 0.85
+roughness_texture = ExtResource("5_1imch")
+normal_enabled = true
+normal_texture = ExtResource("4_0s7p6")
+ao_enabled = true
+ao_texture = ExtResource("2_tymwu")
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("3_h3h3i")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3eroritvt0je"]
+
+[ext_resource type="PackedScene" uid="uid://b04yt85605ea2" path="res://models/tower.fbx" id="1_k1sas"]
+
+[node name="Tower" type="Node3D"]
+
+[node name="tower" parent="." instance=ExtResource("1_k1sas")]

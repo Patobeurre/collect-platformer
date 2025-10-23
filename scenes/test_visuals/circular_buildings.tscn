@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://csnhsmvl5kmf6"]
+
+[ext_resource type="Material" uid="uid://bef7xk85q6bev" path="res://materials/concrete_floor_worn_001_4k.blend/concrete_floor.tres" id="1_5puvr"]
+[ext_resource type="PackedScene" uid="uid://bxcd8xrsjgkv" path="res://circular_buildings.tscn" id="4_yyecb"]
+[ext_resource type="PackedScene" uid="uid://c4oyq2n7gxi8q" path="res://models/light_tree.fbx" id="5_mol1t"]
+[ext_resource type="AudioStream" uid="uid://dut23l3u5xmir" path="res://music/Last Night The Moon Came Jon Hassell.mp3" id="6_6ouli"]
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/PlayerCharacterScene.tscn" id="7_4y0i3"]
+
+[sub_resource type="Sky" id="Sky_mol1t"]
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
+sky = SubResource("Sky_mol1t")
+ambient_light_color = Color(0.9, 0.8685, 0.774, 1)
+ambient_light_sky_contribution = 0.9
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.637847, 0.669527, 0.719307, 1)
+fog_light_energy = 0.5
+fog_sun_scatter = 0.5
+fog_density = 0.8
+fog_depth_curve = 2.63902
+fog_depth_begin = 0.0
+fog_depth_end = 180.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
+material = ExtResource("1_5puvr")
+size = Vector3(200, 1, 200)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7dm0k"]
+points = PackedVector3Array(-100, -0.5, -100, -100, 0.5, -100, 100, -0.5, -100, -100, -0.5, 100, -100, 0.5, 100, 100, 0.5, -100, 100, -0.5, 100, 100, 0.5, 100)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.723726, -0.441193, 0.53063, 7.14022e-09, 0.768932, 0.639331, -0.690089, 0.462701, -0.556495, 0, -77.9182, 0)
+visible = false
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h2yge")
+
+[node name="Walls" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Floor" type="StaticBody3D" parent="Walls"]
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Floor"]
+mesh = SubResource("BoxMesh_7dm0k")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Floor"]
+shape = SubResource("ConvexPolygonShape3D_7dm0k")
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="BaseLight" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.8267, 0)
+light_color = Color(0.885262, 0.906193, 0.977358, 1)
+light_energy = 2.0
+light_specular = 0.0
+omni_range = 500.0
+omni_attenuation = 0.5
+
+[node name="Sounds" type="Node3D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("6_6ouli")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("7_4y0i3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.2873, 1.79475, 63)
+
+[node name="light_tree" parent="." instance=ExtResource("5_mol1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0.488202, 3)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="light_tree"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.362389, 2.91027, -0.861608)
+light_color = Color(0.23, 1, 0.5765, 1)
+light_energy = 5.0
+light_specular = 0.0
+omni_range = 64.7598
+
+[node name="rooftops" parent="." instance=ExtResource("4_yyecb")]

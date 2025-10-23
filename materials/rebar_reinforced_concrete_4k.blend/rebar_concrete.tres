@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cmcha5uwjq3rg"]
+
+[ext_resource type="Texture2D" uid="uid://cqihaiu60ge4u" path="res://materials/rebar_reinforced_concrete_4k.blend/textures/rebar_reinforced_concrete_diff_4k.jpg" id="1_74ta8"]
+
+[resource]
+albedo_texture = ExtResource("1_74ta8")
+normal_enabled = true
+uv1_scale = Vector3(0.06, 0.06, 0.06)
+uv1_triplanar = true
+uv1_world_triplanar = true

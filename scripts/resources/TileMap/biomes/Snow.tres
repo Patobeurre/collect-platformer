@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="BiomeRes" load_steps=8 format=3 uid="uid://cbaxkoxntvw1n"]
+
+[ext_resource type="Script" uid="uid://dp5t3y308ecto" path="res://scripts/resources/BreakableObjRes.gd" id="1_laj0p"]
+[ext_resource type="Material" uid="uid://b3f33l1jwncx5" path="res://materials/Tile/Snow.tres" id="4_08gnu"]
+[ext_resource type="Script" uid="uid://bp0x13hfp36yk" path="res://scripts/resources/TileMap/Pattern.gd" id="5_fn7u7"]
+[ext_resource type="Resource" uid="uid://bu8e65l6vbd2s" path="res://scripts/resources/TileMap/patterns/Arrow_1.tres" id="6_m5220"]
+[ext_resource type="Resource" uid="uid://cmgu0xw6555sh" path="res://scripts/resources/TileMap/patterns/Simple.tres" id="7_4cmfk"]
+[ext_resource type="Resource" uid="uid://ck4f4rjmsrbah" path="res://scripts/resources/TileMap/patterns/DualBranches_2.tres" id="8_p1ygx"]
+[ext_resource type="Script" uid="uid://c3wu3ilg3cgtw" path="res://scripts/resources/TileMap/BiomeRes.gd" id="9_uu7tc"]
+
+[resource]
+script = ExtResource("9_uu7tc")
+name = "Mountain"
+lower_range = 8
+upper_range = 15
+material = ExtResource("4_08gnu")
+collectablesTypes = Array[ExtResource("1_laj0p")]([])
+patterns = Array[ExtResource("5_fn7u7")]([ExtResource("6_m5220"), ExtResource("7_4cmfk"), ExtResource("8_p1ygx")])
+metadata/_custom_type_script = "uid://c3wu3ilg3cgtw"

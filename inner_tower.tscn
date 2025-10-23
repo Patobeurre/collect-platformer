@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://3gk7w7jxan0b"]
+
+[ext_resource type="PackedScene" uid="uid://eltkf3rilljs" path="res://models/inner_tower.fbx" id="1_pa1ae"]
+
+[node name="InnerTower" type="Node3D"]
+
+[node name="inner_tower" parent="." instance=ExtResource("1_pa1ae")]

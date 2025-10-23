@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://doeoreadsj81p"]
+
+[ext_resource type="Script" uid="uid://bkhirgu3sefsh" path="res://models/breakables/BreakableObject.gd" id="1_rvoth"]
+
+[sub_resource type="Animation" id="Animation_0o07y"]
+length = 0.001
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_wquid"]
+resource_name = "squash_stretch"
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.0333333, 1, 1, 0.8, 1, 0.0666667, 1, 1, 1.05, 1, 0.166667, 1, 1, 1, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_226k2"]
+_data = {
+&"RESET": SubResource("Animation_0o07y"),
+&"squash_stretch": SubResource("Animation_wquid")
+}
+
+[node name="BreackableObject" type="Node3D"]
+script = ExtResource("1_rvoth")
+
+[node name="Mesh" type="Node3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_226k2")
+}

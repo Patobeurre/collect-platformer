@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CollectableRes" load_steps=3 format=3 uid="uid://de4jf0w023oeu"]
+
+[ext_resource type="Texture2D" uid="uid://65hr6kr2b15w" path="res://images/Collectables/stone_icon.png" id="1_cigyu"]
+[ext_resource type="Script" uid="uid://b3e7lrq7ypx5w" path="res://scripts/resources/CollectableRes.gd" id="2_yf4ut"]
+
+[resource]
+script = ExtResource("2_yf4ut")
+name = "Stone"
+image = ExtResource("1_cigyu")
+metadata/_custom_type_script = "uid://b3e7lrq7ypx5w"

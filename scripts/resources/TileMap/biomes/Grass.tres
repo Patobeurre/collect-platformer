@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BiomeRes" load_steps=7 format=3 uid="uid://wfq6p0n6nh3u"]
+
+[ext_resource type="Script" uid="uid://dp5t3y308ecto" path="res://scripts/resources/BreakableObjRes.gd" id="1_q6cfv"]
+[ext_resource type="Material" uid="uid://iu7tyhw8j3ah" path="res://materials/Tile/Grass.tres" id="3_vbyg6"]
+[ext_resource type="Script" uid="uid://bp0x13hfp36yk" path="res://scripts/resources/TileMap/Pattern.gd" id="4_ffn8o"]
+[ext_resource type="Resource" uid="uid://cmgu0xw6555sh" path="res://scripts/resources/TileMap/patterns/Simple.tres" id="5_tqtu6"]
+[ext_resource type="Resource" uid="uid://ico0siu60468" path="res://scripts/resources/TileMap/patterns/FrontLine.tres" id="6_sqpm4"]
+[ext_resource type="Script" uid="uid://c3wu3ilg3cgtw" path="res://scripts/resources/TileMap/BiomeRes.gd" id="7_xqylx"]
+
+[resource]
+script = ExtResource("7_xqylx")
+name = "Grass"
+lower_range = -3
+upper_range = 3
+material = ExtResource("3_vbyg6")
+collectablesTypes = Array[ExtResource("1_q6cfv")]([])
+patterns = Array[ExtResource("4_ffn8o")]([ExtResource("5_tqtu6"), ExtResource("6_sqpm4")])
+metadata/_custom_type_script = "uid://c3wu3ilg3cgtw"
