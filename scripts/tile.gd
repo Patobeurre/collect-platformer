@@ -10,6 +10,8 @@ class_name TileObject
 @onready var breakable_obj_scene :PackedScene = preload("res://models/breakables/BreakableObject.tscn")
 var collectable_pos_nodes :Array[Node] = []
 
+@onready var structure_node :Node3D = $MainNode/Structures
+
 @onready var expand_left :ExpandNode = $"MainNode/Borders/ExpandLeft"
 @onready var expand_right :ExpandNode = $"MainNode/Borders/ExpandRight"
 @onready var expand_front :ExpandNode = $"MainNode/Borders/ExpandFront"
@@ -30,7 +32,10 @@ func init(tileRes :TileRes) -> void:
 	
 	apply_biome_material()
 	
-	instantiate_collectables()
+	if res.structure != null:
+		instantiate_structure()
+	else:
+		instantiate_collectables()
 	
 	if res.animateOnInstantiate:
 		animate_on_instantiate()
@@ -43,6 +48,11 @@ func init(tileRes :TileRes) -> void:
 
 func apply_biome_material() -> void:
 	mesh.material_override = res.biome.material
+
+
+func instantiate_structure() -> void:
+	var structure = res.structure.instantiate()
+	structure_node.add_child(structure)
 
 
 func instantiate_collectables() -> void:

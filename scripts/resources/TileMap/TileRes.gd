@@ -8,6 +8,7 @@ class_name TileRes
 @export var biome :BiomeRes = BiomeRes.new()
 
 @export var collectables :Array[BreakableObjRes] = []
+@export var structure :PackedScene = null
 
 @export var scene :PackedScene = preload("res://scenes/test_gridmap/tile.tscn")
 static var TILE_SIZE = 10
